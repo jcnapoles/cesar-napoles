@@ -5,8 +5,11 @@ import WithSubnavigation from './components/Navbar';
 import ThreeTierPricing from './components/Prices';
 import SocialProfileWithImage from './components/SocialUserProfile';
 import ProductList from './components/ProductList';
+import { inject } from '@vercel/analytics';
+
 
 function App() {
+  inject();
   return (
     <ChakraProvider>
       <WithSubnavigation/>
