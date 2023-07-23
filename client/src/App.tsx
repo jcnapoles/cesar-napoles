@@ -1,26 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import { Box, ChakraProvider, CSSReset } from '@chakra-ui/react';
-import { getHelloMessage } from './api';
+import { ChakraProvider } from '@chakra-ui/react';
 import WithBackgroundImage from './components/Hero';
 import SmallWithLogoLeft from './components/Footer';
 import WithSubnavigation from './components/Navbar';
 import ThreeTierPricing from './components/prices';
 import SocialProfileWithImage from './components/SocialUserProfile';
+import ProductList from './components/ProductList';
 
 function App() {
-  const [helloMessage, setHelloMessage] = useState('');
-
-  useEffect(() => {
-    // Llamada a la API del servidor Express
-    getHelloMessage().then((data) => setHelloMessage(data.message));
-  }, []);
-
   return (
     <ChakraProvider>
       <WithSubnavigation/>
       <WithBackgroundImage/>
+      <ProductList/>
       <SocialProfileWithImage/>
-      <ThreeTierPricing/>
+      <ThreeTierPricing/>      
       <SmallWithLogoLeft/>
     </ChakraProvider>
   );
